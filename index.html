@@ -1,8 +1,10 @@
+```html
 <!DOCTYPE html>
 <html lang="uz">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Qurilish Nazorati</title>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -15,18 +17,18 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #f4f6f8;
-    color: #222;
+    background: #f3f4f6;
+    color: #111827;
 }
 
 header {
-    background: #1f2937;
+    background: #111827;
     color: white;
-    padding: 18px;
+    padding: 18px 20px;
 }
 
-.header-inner {
-    max-width: 1400px;
+.header {
+    max-width: 1500px;
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -34,89 +36,77 @@ header {
     gap: 15px;
 }
 
-h1 {
-    margin: 0;
-    font-size: 24px;
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.user-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logout {
+    border: 0;
+    background: #dc2626;
+    color: white;
+    padding: 9px 15px;
+    border-radius: 7px;
+    cursor: pointer;
 }
 
 .container {
-    max-width: 1400px;
+    max-width: 1500px;
     margin: 20px auto;
     padding: 0 15px;
 }
 
 /* LOGIN */
 
-.login-box {
-    width: 100%;
+.login {
     max-width: 420px;
     margin: 80px auto;
     background: white;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 5px 25px rgba(0,0,0,.12);
+    box-shadow: 0 5px 25px rgba(0,0,0,.1);
 }
 
-.login-box h2 {
-    margin-top: 0;
+.login h2 {
     text-align: center;
+    margin-top: 0;
 }
 
-input,
-button {
-    font-family: inherit;
-}
-
-.login-box input {
+.login input {
     width: 100%;
     padding: 13px;
     margin: 7px 0;
-    border: 1px solid #ccc;
+    border: 1px solid #d1d5db;
     border-radius: 8px;
+}
+
+.login button {
+    width: 100%;
+    padding: 13px;
+    margin-top: 8px;
+    border: 0;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
 }
 
 .login-btn {
-    width: 100%;
-    padding: 13px;
-    border: 0;
-    border-radius: 8px;
     background: #2563eb;
-    color: white;
-    cursor: pointer;
-    margin-top: 10px;
 }
 
 .register-btn {
-    width: 100%;
-    padding: 13px;
-    border: 0;
-    border-radius: 8px;
     background: #16a34a;
-    color: white;
-    cursor: pointer;
-    margin-top: 8px;
 }
 
-.message {
-    margin-top: 12px;
+#loginMessage {
     text-align: center;
-}
-
-/* USER */
-
-.user-info {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.logout {
-    background: #dc2626;
-    color: white;
-    border: 0;
-    padding: 9px 14px;
-    border-radius: 7px;
-    cursor: pointer;
+    margin-top: 12px;
 }
 
 /* BLOCKS */
@@ -129,13 +119,13 @@ button {
 }
 
 .block-button {
-    border: 0;
     background: white;
-    padding: 12px 8px;
+    border: 0;
     border-radius: 8px;
+    padding: 13px 8px;
+    font-weight: bold;
     cursor: pointer;
     box-shadow: 0 2px 7px rgba(0,0,0,.08);
-    font-weight: bold;
 }
 
 .block-button:hover {
@@ -151,62 +141,59 @@ button {
 
 .card {
     background: white;
-    border-radius: 12px;
+    border-radius: 13px;
     padding: 20px;
     box-shadow: 0 3px 15px rgba(0,0,0,.08);
 }
 
-.card-top {
+.card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
     margin-bottom: 15px;
 }
 
-.card-top h2 {
+.card-header h2 {
     margin: 0;
 }
 
-.admin-badge {
-    background: #16a34a;
-    color: white;
+.badge {
     padding: 7px 12px;
     border-radius: 20px;
+    color: white;
     font-size: 13px;
 }
 
-.viewer-badge {
+.admin {
+    background: #16a34a;
+}
+
+.viewer {
     background: #64748b;
-    color: white;
-    padding: 7px 12px;
-    border-radius: 20px;
-    font-size: 13px;
 }
 
 /* AVERAGE */
 
-.average-box {
-    margin-bottom: 15px;
+.average {
     background: #f1f5f9;
-    padding: 14px;
-    border-radius: 10px;
+    padding: 15px;
+    border-radius: 9px;
+    margin-bottom: 15px;
 }
 
-.average-number {
-    font-size: 25px;
-    font-weight: bold;
+.average strong {
+    font-size: 26px;
 }
 
 /* TABLE */
 
-.table-wrapper {
+.table-wrap {
     overflow-x: auto;
 }
 
 table {
     width: 100%;
-    min-width: 900px;
+    min-width: 1050px;
     border-collapse: collapse;
 }
 
@@ -219,16 +206,15 @@ th {
 }
 
 td {
-    border-bottom: 1px solid #e5e7eb;
     padding: 10px;
-    vertical-align: middle;
+    border-bottom: 1px solid #e5e7eb;
 }
 
 tr:hover {
     background: #f8fafc;
 }
 
-.edit-input {
+input.edit {
     width: 100%;
     min-width: 80px;
     padding: 8px;
@@ -236,20 +222,10 @@ tr:hover {
     border-radius: 6px;
 }
 
-.task-name {
-    font-weight: bold;
-}
-
-.material-name {
-    color: #64748b;
-    font-size: 12px;
-    margin-top: 3px;
-}
-
 /* PROGRESS */
 
-.progress-container {
-    min-width: 150px;
+.progress {
+    width: 160px;
 }
 
 .progress-bar {
@@ -261,84 +237,68 @@ tr:hover {
 
 .progress-fill {
     height: 100%;
-    transition: width .3s;
+    background: #2563eb;
+    transition: .3s;
 }
 
-.progress-text {
-    margin-top: 5px;
+.percent {
     font-weight: bold;
-    font-size: 13px;
+    margin-top: 5px;
 }
 
 /* STATUS */
 
-.status {
-    font-weight: bold;
-    white-space: nowrap;
-}
-
-.status.done {
+.done {
     color: #16a34a;
+    font-weight: bold;
 }
 
-.status.process {
+.process {
     color: #d97706;
+    font-weight: bold;
 }
 
-.status.not-started {
+.not-started {
     color: #64748b;
+    font-weight: bold;
 }
 
-/* SAVE */
-
-.save-btn {
-    border: 0;
+.save {
     background: #2563eb;
+    border: 0;
     color: white;
     padding: 8px 12px;
     border-radius: 6px;
     cursor: pointer;
 }
 
-.save-btn:hover {
+.save:hover {
     background: #1d4ed8;
 }
 
+.empty,
 .loading {
-    text-align: center;
-    padding: 30px;
-}
-
-.empty {
     text-align: center;
     padding: 40px;
     color: #64748b;
 }
 
-/* ADMIN NOTICE */
-
 .notice {
-    margin-bottom: 15px;
-    padding: 12px;
-    border-radius: 8px;
     background: #eff6ff;
     color: #1d4ed8;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
 }
 
-/* MOBILE */
+@media(max-width:700px) {
 
-@media(max-width: 700px) {
-
-    .header-inner {
+    .header {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    h1 {
-        font-size: 20px;
-    }
-
-    .user-info {
+    .user-area {
         width: 100%;
         justify-content: space-between;
     }
@@ -358,7 +318,7 @@ tr:hover {
 
 <!-- LOGIN -->
 
-<div id="loginPage" class="login-box">
+<div id="loginPage" class="login">
 
     <h2>🏗️ Qurilish Nazorati</h2>
 
@@ -374,15 +334,21 @@ tr:hover {
         placeholder="Parol"
     >
 
-    <button class="login-btn" onclick="login()">
+    <button
+        class="login-btn"
+        onclick="login()"
+    >
         Kirish
     </button>
 
-    <button class="register-btn" onclick="register()">
+    <button
+        class="register-btn"
+        onclick="register()"
+    >
         Ro'yxatdan o'tish
     </button>
 
-    <div id="loginMessage" class="message"></div>
+    <div id="loginMessage"></div>
 
 </div>
 
@@ -393,15 +359,20 @@ tr:hover {
 
 <header>
 
-    <div class="header-inner">
+    <div class="header">
 
-        <h1>🏗️ Qurilish Nazorati</h1>
+        <div class="logo">
+            🏗️ Qurilish Nazorati
+        </div>
 
-        <div class="user-info">
+        <div class="user-area">
 
             <span id="userEmail"></span>
 
-            <button class="logout" onclick="logout()">
+            <button
+                class="logout"
+                onclick="logout()"
+            >
                 Chiqish
             </button>
 
@@ -414,22 +385,26 @@ tr:hover {
 
 <div class="container">
 
-    <!-- BLOCKS -->
+    <!-- 1-17 BLOCK -->
 
-    <div id="blocks" class="blocks"></div>
+    <div
+        id="blocks"
+        class="blocks"
+    ></div>
 
-
-    <!-- MAIN CARD -->
 
     <div class="card">
 
-        <div class="card-top">
+        <div class="card-header">
 
             <h2 id="blockTitle">
                 1-blok
             </h2>
 
-            <span id="roleBadge"></span>
+            <span
+                id="roleBadge"
+                class="badge"
+            ></span>
 
         </div>
 
@@ -437,25 +412,22 @@ tr:hover {
         <div id="notice"></div>
 
 
-        <div class="average-box">
+        <div class="average">
 
-            <div>
-                Umumiy bajarilish:
-            </div>
+            Umumiy bajarilish:
 
-            <div
-                id="average"
-                class="average-number"
-            >
+            <br>
+
+            <strong id="average">
                 0%
-            </div>
+            </strong>
 
         </div>
 
 
         <div
             id="workList"
-            class="table-wrapper"
+            class="table-wrap"
         >
 
             <div class="loading">
@@ -473,9 +445,9 @@ tr:hover {
 
 <script>
 
-// =====================================================
-// SUPABASE
-// =====================================================
+/* =====================================================
+   SUPABASE
+===================================================== */
 
 const SUPABASE_URL =
     "https://fbjfjphvealwxaveoeyx.supabase.co";
@@ -490,17 +462,17 @@ const supabaseClient =
     );
 
 
-// =====================================================
-// ADMIN
-// =====================================================
+/* =====================================================
+   ADMIN
+===================================================== */
 
 const ADMIN_EMAIL =
     "hamroqulovramziddin095@gmail.com";
 
 
-// =====================================================
-// VARIABLES
-// =====================================================
+/* =====================================================
+   VARIABLES
+===================================================== */
 
 let currentUser = null;
 
@@ -511,9 +483,9 @@ let currentBlock = 1;
 let realtimeChannel = null;
 
 
-// =====================================================
-// LOGIN
-// =====================================================
+/* =====================================================
+   LOGIN
+===================================================== */
 
 async function login() {
 
@@ -526,6 +498,7 @@ async function login() {
     const message =
         document.getElementById("loginMessage");
 
+
     if (!email || !password) {
 
         message.textContent =
@@ -534,14 +507,20 @@ async function login() {
         return;
     }
 
-    message.textContent =
-        "Kirish...";
 
-    const { data, error } =
+    message.textContent =
+        "Kirilmoqda...";
+
+
+    const {
+        data,
+        error
+    } =
         await supabaseClient.auth.signInWithPassword({
             email,
             password
         });
+
 
     if (error) {
 
@@ -551,16 +530,17 @@ async function login() {
         return;
     }
 
-    currentUser = data.user;
+
+    currentUser =
+        data.user;
 
     await startApp();
-
 }
 
 
-// =====================================================
-// REGISTER
-// =====================================================
+/* =====================================================
+   REGISTER
+===================================================== */
 
 async function register() {
 
@@ -573,6 +553,7 @@ async function register() {
     const message =
         document.getElementById("loginMessage");
 
+
     if (!email || !password) {
 
         message.textContent =
@@ -581,19 +562,23 @@ async function register() {
         return;
     }
 
+
     if (password.length < 6) {
 
         message.textContent =
-            "Parol kamida 6 ta belgidan iborat bo'lishi kerak.";
+            "Parol kamida 6 ta belgi bo'lishi kerak.";
 
         return;
     }
+
 
     message.textContent =
         "Ro'yxatdan o'tkazilmoqda...";
 
 
-    const { data, error } =
+    const {
+        error
+    } =
         await supabaseClient.auth.signUp({
             email,
             password
@@ -610,14 +595,13 @@ async function register() {
 
 
     message.textContent =
-        "Ro'yxatdan o'tish muvaffaqiyatli. Emailingizni tasdiqlang.";
-
+        "Emailingizni tasdiqlang.";
 }
 
 
-// =====================================================
-// LOGOUT
-// =====================================================
+/* =====================================================
+   LOGOUT
+===================================================== */
 
 async function logout() {
 
@@ -626,7 +610,9 @@ async function logout() {
     if (realtimeChannel) {
 
         await supabaseClient
-            .removeChannel(realtimeChannel);
+            .removeChannel(
+                realtimeChannel
+            );
 
     }
 
@@ -634,13 +620,14 @@ async function logout() {
 }
 
 
-// =====================================================
-// START APP
-// =====================================================
+/* =====================================================
+   START APP
+===================================================== */
 
 async function startApp() {
 
-    if (!currentUser) return;
+    if (!currentUser)
+        return;
 
 
     isAdmin =
@@ -663,21 +650,17 @@ async function startApp() {
 
     updateRole();
 
-
     createBlocks();
-
 
     await showBlock(1);
 
-
     startRealtime();
-
 }
 
 
-// =====================================================
-// ROLE
-// =====================================================
+/* =====================================================
+   ROLE
+===================================================== */
 
 function updateRole() {
 
@@ -690,39 +673,43 @@ function updateRole() {
 
     if (isAdmin) {
 
-        badge.className =
-            "admin-badge";
-
         badge.textContent =
             "ADMIN";
 
+        badge.className =
+            "badge admin";
+
+
         notice.innerHTML =
-            `<div class="notice">
+            `
+            <div class="notice">
                 Siz admin sifatida kirdingiz.
-                Ma'lumotlarni o'zgartirishingiz mumkin.
-            </div>`;
+                Barcha blok ma'lumotlarini o'zgartirishingiz mumkin.
+            </div>
+            `;
 
     } else {
-
-        badge.className =
-            "viewer-badge";
 
         badge.textContent =
             "KO'RUVCHI";
 
+        badge.className =
+            "badge viewer";
+
+
         notice.innerHTML =
-            `<div class="notice">
+            `
+            <div class="notice">
                 Siz faqat ma'lumotlarni ko'rishingiz mumkin.
-            </div>`;
-
+            </div>
+            `;
     }
-
 }
 
 
-// =====================================================
-// CREATE BLOCKS
-// =====================================================
+/* =====================================================
+   CREATE 1-17 BLOCKS
+===================================================== */
 
 function createBlocks() {
 
@@ -732,407 +719,494 @@ function createBlocks() {
     container.innerHTML = "";
 
 
-    for (let i = 1; i <= 17; i++) {
+    for (
+        let block = 1;
+        block <= 17;
+        block++
+    ) {
 
         const button =
             document.createElement("button");
 
+
         button.className =
             "block-button";
 
+
         button.textContent =
-            i + "-blok";
-
-
-        button.onclick =
-            () => showBlock(i);
+            block + "-blok";
 
 
         button.dataset.block =
-            i;
+            block;
+
+
+        button.onclick =
+            function() {
+
+                showBlock(block);
+
+            };
 
 
         container.appendChild(button);
-
     }
-
 }
 
 
-// =====================================================
-// ACTIVE BLOCK
-// =====================================================
+/* =====================================================
+   ACTIVE BLOCK
+===================================================== */
 
-function setActiveBlock(blockNumber) {
+function setActiveBlock(block) {
 
     document
         .querySelectorAll(".block-button")
         .forEach(button => {
 
-            button.classList.remove("active");
+            button.classList.remove(
+                "active"
+            );
+
 
             if (
                 Number(button.dataset.block) ===
-                blockNumber
+                block
             ) {
 
-                button.classList.add("active");
+                button.classList.add(
+                    "active"
+                );
 
             }
 
         });
-
 }
 
 
-// =====================================================
-// SHOW BLOCK
-// =====================================================
+/* =====================================================
+   SHOW BLOCK
+===================================================== */
 
-async function showBlock(blockNumber) {
+async function showBlock(block) {
 
     currentBlock =
-        blockNumber;
+        block;
 
 
-    setActiveBlock(blockNumber);
+    setActiveBlock(block);
 
 
     document.getElementById("blockTitle")
         .textContent =
-        blockNumber + "-blok";
+        block + "-blok";
 
 
-    const container =
-        document.getElementById("workList");
+    const list =
+        document.getElementById(
+            "workList"
+        );
 
 
-    container.innerHTML =
-        `<div class="loading">
-            Yuklanmoqda...
-        </div>`;
+    list.innerHTML =
+        `
+        <div class="loading">
+            ${block}-blok yuklanmoqda...
+        </div>
+        `;
 
 
-    const { data, error } =
+    const {
+        data,
+        error
+    } =
         await supabaseClient
             .from("construction_items")
             .select("*")
-            .eq("block_id", blockNumber)
-            .order("id", { ascending: true });
+            .eq("block_id", block)
+            .order(
+                "id",
+                {
+                    ascending: true
+                }
+            );
 
 
     if (error) {
 
-        container.innerHTML =
-            `<div class="empty">
+        list.innerHTML =
+            `
+            <div class="empty">
                 Xatolik: ${escapeHtml(error.message)}
-            </div>`;
+            </div>
+            `;
 
         return;
     }
 
 
-    if (!data || data.length === 0) {
+    if (
+        !data ||
+        data.length === 0
+    ) {
 
-        container.innerHTML =
-            `<div class="empty">
-                ${blockNumber}-blokda ishlar mavjud emas.
-            </div>`;
+        list.innerHTML =
+            `
+            <div class="empty">
+                ${block}-blokda ma'lumot yo'q.
+            </div>
+            `;
 
-        document.getElementById("average")
-            .textContent = "0%";
+        document.getElementById(
+            "average"
+        ).textContent = "0%";
 
         return;
     }
 
 
     renderTable(data);
-
 }
 
 
-// =====================================================
-// RENDER TABLE
-// =====================================================
+/* =====================================================
+   TABLE
+===================================================== */
 
 function renderTable(items) {
 
-    const container =
-        document.getElementById("workList");
+    const list =
+        document.getElementById(
+            "workList"
+        );
 
 
-    // 17-BLOKDA
-    // KO'RUVCHIGA MATERIAL VA BIRLIK KO'RINMAYDI
+    /*
+       FAQAT 17-BLOKDA
+       MATERIAL VA BIRLIK
+       KO'RUVCHIDAN YASHIRILADI
+    */
 
-    const hide17Columns =
-        currentBlock === 17 && !isAdmin;
+    const hideColumns =
+        currentBlock === 17 &&
+        !isAdmin;
 
 
     let html = `
-        <table>
 
-            <thead>
+    <table>
 
-                <tr>
+        <thead>
 
-                    <th>#</th>
+            <tr>
 
-                    ${
-                        !hide17Columns
-                        ? "<th>Material / uskuna</th>"
-                        : ""
-                    }
+                <th>#</th>
 
-                    <th>Reja</th>
+                ${
+                    !hideColumns
+                    ? "<th>Material / uskuna</th>"
+                    : ""
+                }
 
-                    <th>Sarflangan</th>
+                <th>Reja</th>
 
-                    ${
-                        !hide17Columns
-                        ? "<th>Birlik</th>"
-                        : ""
-                    }
+                <th>Sarflangan</th>
 
-                    <th>1 birlik narxi</th>
+                ${
+                    !hideColumns
+                    ? "<th>Birlik</th>"
+                    : ""
+                }
 
-                    <th>Jami summa</th>
+                <th>1 birlik narxi</th>
 
-                    <th>Foiz</th>
+                <th>Jami summa</th>
 
-                    <th>Status</th>
+                <th>Foiz</th>
 
-                    ${
-                        isAdmin
-                        ? "<th>Saqlash</th>"
-                        : ""
-                    }
+                <th>Status</th>
 
-                </tr>
+                ${
+                    isAdmin
+                    ? "<th>Saqlash</th>"
+                    : ""
+                }
 
-            </thead>
+            </tr>
 
-            <tbody>
+        </thead>
+
+        <tbody>
     `;
 
 
     let totalPercent = 0;
 
 
-    items.forEach((item, index) => {
-
-        const planned =
-            Number(item.planned) || 0;
-
-        const used =
-            Number(item.used) || 0;
-
-        const price =
-            Number(item.price) || 0;
+    items.forEach(
+        (item, index) => {
 
 
-        let percent = 0;
+            const planned =
+                Number(item.planned) || 0;
 
 
-        if (planned > 0) {
-
-            percent =
-                (used / planned) * 100;
-
-        }
+            const used =
+                Number(item.used) || 0;
 
 
-        if (percent > 100) {
-
-            percent = 100;
-
-        }
+            const price =
+                Number(item.price) || 0;
 
 
-        if (percent < 0) {
-
-            percent = 0;
-
-        }
-
-
-        totalPercent += percent;
+            let percent =
+                planned > 0
+                ? (used / planned) * 100
+                : 0;
 
 
-        const total =
-            used * price;
+            if (percent > 100)
+                percent = 100;
 
 
-        let status = "";
+            if (percent < 0)
+                percent = 0;
 
-        let statusClass = "";
+
+            totalPercent +=
+                percent;
 
 
-        if (percent === 0) {
+            const total =
+                used * price;
 
-            status =
+
+            let status =
                 "Boshlanmagan";
 
-            statusClass =
+
+            let statusClass =
                 "not-started";
 
-        }
 
-        else if (percent >= 100) {
+            if (percent >= 100) {
 
-            status =
-                "✓ Tugagan";
+                status =
+                    "✓ Tugagan";
 
-            statusClass =
-                "done";
+                statusClass =
+                    "done";
 
-        }
+            }
 
-        else {
+            else if (percent > 0) {
 
-            status =
-                "Jarayonda";
+                status =
+                    "Jarayonda";
 
-            statusClass =
-                "process";
+                statusClass =
+                    "process";
 
-        }
+            }
 
 
-        html += `
+            html += `
+
             <tr>
 
                 <td>
                     ${index + 1}
                 </td>
-        `;
+            `;
 
 
-        if (!hide17Columns) {
+            /* MATERIAL */
 
-            html += `
+            if (!hideColumns) {
+
+                html += `
 
                 <td>
 
                     ${
                         isAdmin
-                        ? `
-                            <input
-                                class="edit-input"
-                                id="material-${item.id}"
-                                value="${escapeAttribute(item.material || item.name || "")}"
-                            >
-                          `
-                        : `
-                            <div class="task-name">
-                                ${escapeHtml(item.name || "")}
+
+                        ?
+
+                        `
+                        <input
+                            class="edit"
+                            id="material-${item.id}"
+                            value="${safeAttribute(
+                                item.material ||
+                                item.name ||
+                                ""
+                            )}"
+                        >
+                        `
+
+                        :
+
+                        `
+                        <b>
+                            ${escapeHtml(
+                                item.name || ""
+                            )}
+                        </b>
+
+                        ${
+                            item.material
+                            ?
+                            `
+                            <div style="
+                                font-size:12px;
+                                color:#64748b;
+                                margin-top:3px;
+                            ">
+                                ${escapeHtml(
+                                    item.material
+                                )}
                             </div>
-
-                            ${
-                                item.material
-                                ? `
-                                    <div class="material-name">
-                                        ${escapeHtml(item.material)}
-                                    </div>
-                                  `
-                                : ""
-                            }
-                          `
+                            `
+                            :
+                            ""
+                        }
+                        `
                     }
 
                 </td>
 
-            `;
+                `;
 
-        }
-
-
-        html += `
-
-            <td>
-
-                ${
-                    isAdmin
-                    ? `
-                        <input
-                            class="edit-input"
-                            type="number"
-                            min="0"
-                            id="planned-${item.id}"
-                            value="${planned}"
-                        >
-                      `
-                    : formatNumber(planned)
-                }
-
-            </td>
+            }
 
 
-            <td>
-
-                ${
-                    isAdmin
-                    ? `
-                        <input
-                            class="edit-input"
-                            type="number"
-                            min="0"
-                            id="used-${item.id}"
-                            value="${used}"
-                            oninput="updatePreview(${item.id}, ${price})"
-                        >
-                      `
-                    : formatNumber(used)
-                }
-
-            </td>
-        `;
-
-
-        if (!hide17Columns) {
+            /* REJA */
 
             html += `
+
+            <td>
+
+                ${
+                    isAdmin
+
+                    ?
+
+                    `
+                    <input
+                        class="edit"
+                        type="number"
+                        min="0"
+                        id="planned-${item.id}"
+                        value="${planned}"
+                    >
+                    `
+
+                    :
+
+                    formatNumber(planned)
+                }
+
+            </td>
+
+
+            <!-- SARFLANGAN -->
+
+            <td>
+
+                ${
+                    isAdmin
+
+                    ?
+
+                    `
+                    <input
+                        class="edit"
+                        type="number"
+                        min="0"
+                        id="used-${item.id}"
+                        value="${used}"
+                        oninput="preview(${item.id})"
+                    >
+                    `
+
+                    :
+
+                    formatNumber(used)
+                }
+
+            </td>
+            `;
+
+
+            /* BIRLIK */
+
+            if (!hideColumns) {
+
+                html += `
 
                 <td>
 
                     ${
                         isAdmin
-                        ? `
-                            <input
-                                class="edit-input"
-                                id="unit-${item.id}"
-                                value="${escapeAttribute(item.unit || "")}"
-                            >
-                          `
-                        : escapeHtml(item.unit || "")
+
+                        ?
+
+                        `
+                        <input
+                            class="edit"
+                            id="unit-${item.id}"
+                            value="${safeAttribute(
+                                item.unit || ""
+                            )}"
+                        >
+                        `
+
+                        :
+
+                        escapeHtml(
+                            item.unit || ""
+                        )
                     }
 
                 </td>
 
-            `;
+                `;
 
-        }
+            }
 
 
-        html += `
+            /* PRICE */
+
+            html += `
 
             <td>
 
                 ${
                     isAdmin
-                    ? `
-                        <input
-                            class="edit-input"
-                            type="number"
-                            min="0"
-                            id="price-${item.id}"
-                            value="${price}"
-                        >
-                      `
-                    : formatNumber(price)
+
+                    ?
+
+                    `
+                    <input
+                        class="edit"
+                        type="number"
+                        min="0"
+                        id="price-${item.id}"
+                        value="${price}"
+                        oninput="preview(${item.id})"
+                    >
+                    `
+
+                    :
+
+                    formatMoney(price)
                 }
 
             </td>
 
+
+            <!-- TOTAL -->
 
             <td id="total-${item.id}">
 
@@ -1141,23 +1215,27 @@ function renderTable(items) {
             </td>
 
 
+            <!-- PROGRESS -->
+
             <td>
 
-                <div class="progress-container">
+                <div class="progress">
 
                     <div class="progress-bar">
 
                         <div
                             id="bar-${item.id}"
                             class="progress-fill"
-                            style="width:${percent}%"
+                            style="
+                                width:${percent}%;
+                            "
                         ></div>
 
                     </div>
 
                     <div
                         id="percent-${item.id}"
-                        class="progress-text"
+                        class="percent"
                     >
                         ${percent.toFixed(1)}%
                     </div>
@@ -1167,27 +1245,31 @@ function renderTable(items) {
             </td>
 
 
+            <!-- STATUS -->
+
             <td>
 
                 <span
                     id="status-${item.id}"
-                    class="status ${statusClass}"
+                    class="${statusClass}"
                 >
                     ${status}
                 </span>
 
             </td>
-        `;
+            `;
 
 
-        if (isAdmin) {
+            /* SAVE */
 
-            html += `
+            if (isAdmin) {
+
+                html += `
 
                 <td>
 
                     <button
-                        class="save-btn"
+                        class="save"
                         onclick="saveItem(${item.id})"
                     >
                         Saqlash
@@ -1195,26 +1277,31 @@ function renderTable(items) {
 
                 </td>
 
+                `;
+
+            }
+
+
+            html += `
+
+            </tr>
+
             `;
 
         }
-
-
-        html += `
-            </tr>
-        `;
-
-    });
+    );
 
 
     html += `
-            </tbody>
 
-        </table>
+        </tbody>
+
+    </table>
+
     `;
 
 
-    container.innerHTML =
+    list.innerHTML =
         html;
 
 
@@ -1224,28 +1311,28 @@ function renderTable(items) {
         : 0;
 
 
-    document.getElementById("average")
-        .textContent =
+    document.getElementById(
+        "average"
+    ).textContent =
         average.toFixed(1) + "%";
-
 }
 
 
-// =====================================================
-// UPDATE PREVIEW
-// =====================================================
+/* =====================================================
+   PREVIEW
+===================================================== */
 
-function updatePreview(id, price) {
-
-    const usedInput =
-        document.getElementById(
-            "used-" + id
-        );
-
+function preview(id) {
 
     const plannedInput =
         document.getElementById(
             "planned-" + id
+        );
+
+
+    const usedInput =
+        document.getElementById(
+            "used-" + id
         );
 
 
@@ -1255,23 +1342,27 @@ function updatePreview(id, price) {
         );
 
 
-    if (!usedInput) return;
-
-
-    const used =
-        Number(usedInput.value) || 0;
+    if (!plannedInput ||
+        !usedInput)
+        return;
 
 
     const planned =
-        plannedInput
-        ? Number(plannedInput.value) || 0
-        : 0;
+        Number(
+            plannedInput.value
+        ) || 0;
 
 
-    const currentPrice =
-        priceInput
-        ? Number(priceInput.value) || 0
-        : price;
+    const used =
+        Number(
+            usedInput.value
+        ) || 0;
+
+
+    const price =
+        Number(
+            priceInput?.value
+        ) || 0;
 
 
     let percent =
@@ -1289,135 +1380,125 @@ function updatePreview(id, price) {
 
 
     const total =
-        used * currentPrice;
+        used * price;
 
 
-    const percentElement =
-        document.getElementById(
-            "percent-" + id
-        );
-
-
-    const barElement =
+    const bar =
         document.getElementById(
             "bar-" + id
         );
 
 
-    const totalElement =
+    const percentText =
+        document.getElementById(
+            "percent-" + id
+        );
+
+
+    const totalText =
         document.getElementById(
             "total-" + id
         );
 
 
-    const statusElement =
+    const status =
         document.getElementById(
             "status-" + id
         );
 
 
-    if (percentElement) {
-
-        percentElement.textContent =
-            percent.toFixed(1) + "%";
-
-    }
-
-
-    if (barElement) {
-
-        barElement.style.width =
+    if (bar)
+        bar.style.width =
             percent + "%";
 
-    }
+
+    if (percentText)
+        percentText.textContent =
+            percent.toFixed(1) + "%";
 
 
-    if (totalElement) {
-
-        totalElement.textContent =
+    if (totalText)
+        totalText.textContent =
             formatMoney(total);
 
-    }
 
+    if (status) {
 
-    if (statusElement) {
+        if (percent >= 100) {
 
-        if (percent === 0) {
+            status.textContent =
+                "✓ Tugagan";
 
-            statusElement.textContent =
-                "Boshlanmagan";
-
-            statusElement.className =
-                "status not-started";
+            status.className =
+                "done";
 
         }
 
-        else if (percent >= 100) {
+        else if (percent > 0) {
 
-            statusElement.textContent =
-                "✓ Tugagan";
+            status.textContent =
+                "Jarayonda";
 
-            statusElement.className =
-                "status done";
+            status.className =
+                "process";
 
         }
 
         else {
 
-            statusElement.textContent =
-                "Jarayonda";
+            status.textContent =
+                "Boshlanmagan";
 
-            statusElement.className =
-                "status process";
+            status.className =
+                "not-started";
 
         }
 
     }
-
 }
 
 
-// =====================================================
-// SAVE ITEM
-// =====================================================
+/* =====================================================
+   SAVE
+===================================================== */
 
 async function saveItem(id) {
 
     if (!isAdmin) {
 
         alert(
-            "Sizda ma'lumotlarni o'zgartirish huquqi yo'q."
+            "Sizda o'zgartirish huquqi yo'q."
         );
 
         return;
     }
 
 
-    const materialInput =
+    const material =
         document.getElementById(
             "material-" + id
         );
 
 
-    const plannedInput =
+    const planned =
         document.getElementById(
             "planned-" + id
         );
 
 
-    const usedInput =
+    const used =
         document.getElementById(
             "used-" + id
         );
 
 
-    const unitInput =
+    const unit =
         document.getElementById(
             "unit-" + id
         );
 
 
-    const priceInput =
+    const price =
         document.getElementById(
             "price-" + id
         );
@@ -1426,44 +1507,57 @@ async function saveItem(id) {
     const updateData = {
 
         planned:
-            Number(plannedInput?.value) || 0,
+            Number(
+                planned?.value
+            ) || 0,
 
         used:
-            Number(usedInput?.value) || 0,
+            Number(
+                used?.value
+            ) || 0,
 
         price:
-            Number(priceInput?.value) || 0
+            Number(
+                price?.value
+            ) || 0
 
     };
 
 
-    if (materialInput) {
+    if (material) {
 
         updateData.material =
-            materialInput.value;
+            material.value;
 
     }
 
 
-    if (unitInput) {
+    if (unit) {
 
         updateData.unit =
-            unitInput.value;
+            unit.value;
 
     }
 
 
-    const { error } =
+    const {
+        error
+    } =
         await supabaseClient
-            .from("construction_items")
+            .from(
+                "construction_items"
+            )
             .update(updateData)
-            .eq("id", id);
+            .eq(
+                "id",
+                id
+            );
 
 
     if (error) {
 
         alert(
-            "Saqlashda xatolik:\n" +
+            "Xatolik:\n" +
             error.message
         );
 
@@ -1472,24 +1566,27 @@ async function saveItem(id) {
 
 
     alert(
-        "Ma'lumot saqlandi ✅"
+        "Saqlandi ✅"
     );
 
 
-    await showBlock(currentBlock);
-
+    await showBlock(
+        currentBlock
+    );
 }
 
 
-// =====================================================
-// REALTIME
-// =====================================================
+/* =====================================================
+   REALTIME
+===================================================== */
 
 function startRealtime() {
 
     realtimeChannel =
         supabaseClient
-            .channel("construction-items-live")
+            .channel(
+                "construction-items"
+            )
 
             .on(
                 "postgres_changes",
@@ -1498,69 +1595,84 @@ function startRealtime() {
                     schema: "public",
                     table: "construction_items"
                 },
-                () => {
+                function() {
 
-                    showBlock(currentBlock);
+                    showBlock(
+                        currentBlock
+                    );
 
                 }
             )
 
             .subscribe();
-
 }
 
 
-// =====================================================
-// FORMAT NUMBER
-// =====================================================
+/* =====================================================
+   FORMAT
+===================================================== */
 
 function formatNumber(number) {
 
-    return Number(number || 0)
-        .toLocaleString("uz-UZ");
-
+    return Number(
+        number || 0
+    ).toLocaleString(
+        "uz-UZ"
+    );
 }
 
-
-// =====================================================
-// FORMAT MONEY
-// =====================================================
 
 function formatMoney(number) {
 
-    return Number(number || 0)
-        .toLocaleString("uz-UZ") +
-        " so'm";
-
+    return Number(
+        number || 0
+    ).toLocaleString(
+        "uz-UZ"
+    ) + " so'm";
 }
 
 
-// =====================================================
-// SECURITY HTML
-// =====================================================
+/* =====================================================
+   SECURITY
+===================================================== */
 
 function escapeHtml(value) {
 
-    return String(value ?? "")
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-
+    return String(
+        value ?? ""
+    )
+    .replace(
+        /&/g,
+        "&amp;"
+    )
+    .replace(
+        /</g,
+        "&lt;"
+    )
+    .replace(
+        />/g,
+        "&gt;"
+    )
+    .replace(
+        /"/g,
+        "&quot;"
+    )
+    .replace(
+        /'/g,
+        "&#039;"
+    );
 }
 
 
-function escapeAttribute(value) {
+function safeAttribute(value) {
 
     return escapeHtml(value);
-
 }
 
 
-// =====================================================
-// CHECK EXISTING SESSION
-// =====================================================
+/* =====================================================
+   SESSION
+===================================================== */
 
 async function checkSession() {
 
@@ -1580,20 +1692,22 @@ async function checkSession() {
         await startApp();
 
     }
-
 }
 
 
 checkSession();
 
 
-// =====================================================
-// AUTH STATE
-// =====================================================
+/* =====================================================
+   AUTH CHANGE
+===================================================== */
 
 supabaseClient.auth
     .onAuthStateChange(
-        async (event, session) => {
+        async (
+            event,
+            session
+        ) => {
 
             if (
                 event === "SIGNED_IN" &&
@@ -1614,3 +1728,4 @@ supabaseClient.auth
 
 </body>
 </html>
+```
